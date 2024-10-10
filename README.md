@@ -33,7 +33,7 @@ The input images should be pre-processed as described in the eCaReNet paper [2].
 Combinations with other FeatureCloud apps was not tested yet.
 
 
-## Config OUTDATED
+## Config
 Use the config file to customize your training and evaluation.
 Needs to be uploaded together with the training data as `config.yaml`
 ```
@@ -95,5 +95,7 @@ the InceptionV3.hdf file. The model was configured to expect images of size 256 
 
 ## References
 [1] Egevad, L., Delahunt, B., Srigley, J. R., & Samaratunga, H. (2016). International Society of Urological Pathology (ISUP) grading of prostate cancer – An ISUP consensus on contemporary grading. APMIS, 124(6), 433–435. https://doi.org/10.1111/apm.12533
+
 [2] Dietrich, E., Fuhlert, P., Ernst, A., Sauter, G., Lennartz, M., Stiehl, H. S., Zimmermann, M., & Bonn, S. (2021). Towards Explainable End-to-End Prostate Cancer Relapse Prediction from H&E Images Combining Self-Attention Multiple Instance Learning with a Recurrent Neural Network. In S. Roy, S. Pfohl, E. Rocheteau, G. A. Tadesse, L. Oala, F. Falck, Y. Zhou, L. Shen, G. Zamzmi, P. Mugambi, A. Zirikly, M. B. A. McDermott, & E. Alsentzer (Eds.), Proceedings of Machine Learning for Health (Vol. 158, pp. 38–53). PMLR. https://proceedings.mlr.press/v158/dietrich21a.html
+
 [3] Bulten, W., Kartasalo, K., Chen, PH.C. et al. (2022). Artificial intelligence for diagnosis and Gleason grading of prostate cancer: the PANDA challenge. Nat Med (28, 154–163). https://doi.org/10.1038/s41591-021-01620-2
