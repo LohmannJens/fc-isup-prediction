@@ -1,0 +1,7 @@
+image_id,data_provider,isup,gleason_score,img_path
+0005f7aaab2800f6170c399693a96917,karolinska,0,0+0,images/0005f7aaab2800f6170c399693a96917.png
+000920ad0b612851f8e01bcc880d9b3d,karolinska,0,0+0,images/000920ad0b612851f8e01bcc880d9b3d.png
+001c62abd11fa4b57bf7a6c603a11bb9,karolinska,4,4+4,images/001c62abd11fa4b57bf7a6c603a11bb9.png
+003046e27c8ead3e3db155780dc5498e,karolinska,1,3+3,images/003046e27c8ead3e3db155780dc5498e.png
+0032bfa835ce0f43a92ae0bbab6871cb,karolinska,1,3+3,images/0032bfa835ce0f43a92ae0bbab6871cb.png
+00d7ec94436e3a1416a3b302914957d3,karolinska,2,3+4,images/00d7ec94436e3a1416a3b302914957d3.png
