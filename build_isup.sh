@@ -1,2 +1,2 @@
-docker rmi fed-ecarenet_isup:latest
-docker build . --tag=fed-ecarenet_isup:latest --no-cache --rm
+docker rmi fc-ecarenet-isup:latest
+docker build . --tag=fc-ecarenet-isup:latest --no-cache --rm
