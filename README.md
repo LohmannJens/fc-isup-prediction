@@ -1,32 +1,32 @@
 # Federated ISUP grade prediction FeatureCloud App
 
 ## Description
-A FeatureCloud app to predict ISUP grades [1] from tissue micro array (TMA) images.
+A FeatureCloud app to predict ISUP grades [1] from tissue microarray (TMA) images.
 It was developed based on the first step of eCaReNet [2] for prostate cancer relapse
-over trime prediction.
+over time prediction.
 
 
 ## Input
-In each client the following must be given:
-- images: folder that contains the TMA images as PNG
-- train.csv: containing the local training data
-- valid.csv: containing the local validation data
-- test.csv: containing the local test data
+In each client the following folders and files must be given:
+- `images`: folder that contains the TMA images as PNG
+- `train.csv`: local training data
+- `valid.csv`: local validation data
+- `test.csv`: local test data
 
 Over all clients these files are the same:
-- config.yaml: config file with information about the trainig
-- InceptionV3.hdf: Inception-v3 model file adapted to right image size, pretrained on ImageNet data
+- `config.yaml`: config file with information about the trainig
+- `InceptionV3.hdf`: Inception-v3 model file adapted to right image size, pretrained on ImageNet data
 
 The input images should be pre-processed as described in the eCaReNet paper [2].
 
 
 ## Output
-- `results.csv` containing the predicted class per image and metadata for the test dataset
-- `confusion_matrix.png` confusion matrix of the test dataset predictions (absolute values)
-- `confusion_matrix_relative.png` confusion matrix of the test dataset predictions (relative values)
-- `model_json.json` json file containing the model architecture
-- `best_weights{epoch}_accur{value}.hdf` weights of the best performing model, filename includes best epoch {epoch} and corresponding validation accuracy {value}
-- `results.json` model metrics of training and final evaluation
+- `results.csv`: predicted class per image and metadata for the test dataset
+- `confusion_matrix.png`: confusion matrix of the test dataset predictions (absolute values)
+- `confusion_matrix_relative.png`: confusion matrix of the test dataset predictions (relative values)
+- `model_json.json`: model architecture, necesarry to load the model weights in tensorflow
+- `best_weights{epoch}_accur{value}.hdf`: weights of the best performing model, filename includes best epoch {epoch} and corresponding validation accuracy {value}
+- `results.json`: model metrics during training and final evaluation
 
 
 ## Workflows
@@ -88,14 +88,13 @@ evaluation:
 ```
 
 ## Test data
-We made dummy data available in the folder 'testdata'. It contains a few samples from the PANDAS dataset [3].
-The images were cropped quadratically and resized to 2048 x 2048 pixels. Additionally, the folder includes
-the InceptionV3.hdf file. The model was configured to expect images of size 256 x 256 pixels as input.
+For testing the functionality of the app we provide dummy data in `data/testdata`.
+The dummy test data includese two clients with quadratic images (2048 x 2024).
+Additionally, the folder includes a pretrained model stored as `InceptionV3.hdf`.
+The model was configured to expect images of size 256 x 256 pixels as input.
 
 
 ## References
 [1] Egevad, L., Delahunt, B., Srigley, J. R., & Samaratunga, H. (2016). International Society of Urological Pathology (ISUP) grading of prostate cancer – An ISUP consensus on contemporary grading. APMIS, 124(6), 433–435. https://doi.org/10.1111/apm.12533
 
 [2] Dietrich, E., Fuhlert, P., Ernst, A., Sauter, G., Lennartz, M., Stiehl, H. S., Zimmermann, M., & Bonn, S. (2021). Towards Explainable End-to-End Prostate Cancer Relapse Prediction from H&E Images Combining Self-Attention Multiple Instance Learning with a Recurrent Neural Network. In S. Roy, S. Pfohl, E. Rocheteau, G. A. Tadesse, L. Oala, F. Falck, Y. Zhou, L. Shen, G. Zamzmi, P. Mugambi, A. Zirikly, M. B. A. McDermott, & E. Alsentzer (Eds.), Proceedings of Machine Learning for Health (Vol. 158, pp. 38–53). PMLR. https://proceedings.mlr.press/v158/dietrich21a.html
-
-[3] Bulten, W., Kartasalo, K., Chen, PH.C. et al. (2022). Artificial intelligence for diagnosis and Gleason grading of prostate cancer: the PANDA challenge. Nat Med (28, 154–163). https://doi.org/10.1038/s41591-021-01620-2
