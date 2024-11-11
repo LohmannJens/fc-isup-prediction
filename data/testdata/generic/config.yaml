@@ -1,5 +1,4 @@
 data_generation:
-  cache: # str, Give folder name to use caching of the data
   train_batch_size: 2 # int, batch size for training
   valid_batch_size: 2 # int, batch size for validation 
   drop_cases: # list of lists
@@ -14,7 +13,6 @@ data_generation:
 model:
   additional_input: # list, column names of additional inputs
   dense_layer_nodes: [32] # list, number of nodes for dense layer
-  rnn_layer_nodes: # list, number of nodes for rnn layers
   keras_model_params: # dict, infos for keras model
     weights: imagenet # None or 'imagenet'
     input_shape: [*resize, *resize, 3]
@@ -26,13 +24,13 @@ training:
   epochs: 3 # int, how many epochs to train (number of communications)
   local_epochs: 1 # int, how many epochs to train per communucation round (before merging models again)
   monitor_val: 'val_tf_categorical_accuracy' # str, metric that is used to determine best epoch
-  callbacks: # dict, new callbacks like lr scheduler or early stopping can be defined
+  callbacks: # dict, new callbacks like lr scheduler or early stopping can be defined (e.g. from tf.keras.callbacks)
   optimizer: # dict
     name: SGD # str, tf.keras optimizer, e.g. 'Adam', 'Nadam'
-    params: # list of additional parameters as dict
+    params: # additional parameters as dict
       - learning_rate: 0.005
-  loss_fn: isup_cce_loss # str, loss function for the optimizer
-  compile_metrics: # list, metrics for the optimizer
+  loss_fn: isup_cce_loss # str, loss function for the optimizer (e.g. from tf.keras.losses)
+  compile_metrics: # list, metrics for the optimizer (e.g. from tf.keras.metrics)
     - TfCategoricalAccuracy
   compile_attributes: {} # dict, additional attributes 
   class_weight: True # bool, weighting classes by occurrence

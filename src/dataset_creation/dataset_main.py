@@ -112,11 +112,8 @@ def dataset_from_csv(data_generation_config, csv_filepath, image_directory, batc
     # output for exmaple for dataset['label']: tuple(event_month, censored)
     dataset, additional_inputs = adjust_dataset_to_model(dataset)
 
-    # cache the dataset either in memory or in a file, to save computational time
-    if data_generation_config['cache'] is not None:
-        dataset = dataset.cache(data_generation_config['cache'] + usage_mode)
-    else:
-        dataset = dataset.cache()
+    # cache the dataset in memory to save computational time
+    dataset = dataset.cache()
 
     class_distribution = np.array([sum(array_labels == c) for c in range(6)])
 
